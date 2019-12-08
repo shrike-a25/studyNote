@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{pssB:function(t,e,n){"use strict";n.r(e);n("q1tI");var c=n("Wbzz"),b=n("TJpk"),a=n.n(b),d=n("17x9"),p=n.n(d),l=n("tCqT"),o=n("ehyU"),u=n("V7ww"),i=n("qKvR");e.default=function(t){return Object(i.d)(l.a,null,Object(i.d)(a.a,{title:"404"}),Object(i.d)(u.a,{title:"404"}),Object(i.d)(o.a,{center:t},Object(i.d)("h1",null,"ページが見つかりません"),Object(i.d)("h3",null,Object(i.d)(c.Link,{to:"/"},"ホーム"),"に戻る")))},o.a.propTypes={center:p.a.object}}}]);
+//# sourceMappingURL=component---src-pages-404-jsx-197e5ffa223bef2d2f8c.js.map

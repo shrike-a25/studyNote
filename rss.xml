@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 08 Dec 2019 14:23:33 GMT</lastBuildDate><item><title><![CDATA[C#のパフォーマンス最適化技法]]></title><description><![CDATA[C#のパフォーマンス最適化技法 速度測定 BenchmarkDotNet ライブラリを使う Stopwatch より正確なベンチマークパッケージ。 使い方は公式ページ参照。 benchmarkdotnet 公式 Stopwatch クラスを使う BenchmarkDotNet…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-06</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-06</guid><pubDate>Fri, 06 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C#のパフォーマンス最適化技法&lt;/h1&gt;
+&lt;h2&gt;速度測定&lt;/h2&gt;
+&lt;h3&gt;BenchmarkDotNet ライブラリを使う&lt;/h3&gt;
+&lt;p&gt;Stopwatch より正確なベンチマークパッケージ。&lt;/p&gt;
+&lt;p&gt;使い方は公式ページ参照。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://benchmarkdotnet.org/&quot;&gt;benchmarkdotnet 公式&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Stopwatch クラスを使う&lt;/h3&gt;
+&lt;p&gt;BenchmarkDotNet 程正確ではないが、簡単に使える。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/ja-jp/dotnet/api/system.diagnostics.stopwatch&quot;&gt;Microsoft Docs Stopwatch クラス&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下のような Utilty があれば楽。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cs&quot;&gt;&lt;pre class=&quot;language-cs&quot;&gt;&lt;code class=&quot;language-cs&quot;&gt;    &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/// 処理時間計測Utilty&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;StopwatchUtilty&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; Dictionary&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Stopwatch&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; _dic &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token generic-method&quot;&gt;&lt;span class=&quot;token function&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Stopwatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// 計測開始&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Stopwatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// 再計測開始&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// 計測停止&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Stop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Stop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// 計測結果&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token comment&quot;&gt;// 結果表示&lt;/span&gt;
+            Console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$&lt;span class=&quot;token string&quot;&gt;&quot; {processName},{_dic[processName].Elapsed.ToString()}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;最適化&lt;/h2&gt;
+&lt;h2&gt;Boxing&lt;/h2&gt;
+&lt;h3&gt;メモリ最適化&lt;/h3&gt;
+&lt;p&gt;VisualStudio のデバッグ-ウィンドウ-診断ツールの表示から診断ツール表示。&lt;/p&gt;
+&lt;p&gt;適宜スナップショットをとって直前のスナップショットと比較する。&lt;/p&gt;
+&lt;p&gt;参照の削除。(参照されていると GC で解放されないため)&lt;/p&gt;
+&lt;p&gt;イベントの削除。(参照が残るので)&lt;/p&gt;
+&lt;p&gt;Dispose の徹底。(using を使う)&lt;/p&gt;
+&lt;p&gt;Lambda での変数のキャプチャに気をつける。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[はじめに]]></title><description><![CDATA[はじめに このサイトは IT 技術について個人的に学んだことを記述するための
+備忘録的な目的で使用します。]]></description><link>https://shrike-a25.netlify.com/posts//2019-11-24</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-11-24</guid><pubDate>Sun, 24 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;はじめに&lt;/h1&gt;
+&lt;p&gt;このサイトは IT 技術について個人的に学んだことを記述するための
+備忘録的な目的で使用します。&lt;/p&gt;</content:encoded></item></channel></rss>
