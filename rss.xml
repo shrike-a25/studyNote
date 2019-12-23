@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 19 Dec 2019 13:27:25 GMT</lastBuildDate><item><title><![CDATA[C#テスト環境]]></title><description><![CDATA[C#テスト環境 Xunit ユニットテスト用フレームワーク FluentAssertions ユニットテスト用拡張メソッド Moq mocking インタフェースの処理が呼ばれた時の引数と戻り値を指定できる。 指定した引数がインタフェース Coverlet.collector…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-14</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-14</guid><pubDate>Sat, 14 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C#テスト環境&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Dec 2019 12:42:15 GMT</lastBuildDate><item><title><![CDATA[Webパフォーマンスについて]]></title><description><![CDATA[Web パフォーマンスについて SPA(シングルページアプリケーション)で不要な読み込み回数を削減。 ただし、初期コストは増える。 リクエスト数削減。 HTTP/1.1 の場合は、ブラウザによって同時に読み込めるファイル数が決まっているため 通信量削減 遅延読込を行う PWA…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-23</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-23</guid><pubDate>Mon, 23 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Web パフォーマンスについて&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SPA(シングルページアプリケーション)で不要な読み込み回数を削減。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ただし、初期コストは増える。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;リクエスト数削減。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP/1.1 の場合は、ブラウザによって同時に読み込めるファイル数が決まっているため&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;通信量削減&lt;/li&gt;
+&lt;li&gt;遅延読込を行う&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PWA&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;キャッシュを利用しやすくなる。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;パフォーマンス測定&lt;/h2&gt;
+&lt;h3&gt;Lighthouse&lt;/h3&gt;
+&lt;p&gt;Google のサイトパフォーマンス測定ツール
+Chrome DevTools,Chrome 拡張,Node.js ライブラリから利用できる。&lt;/p&gt;
+&lt;h4&gt;Chrome DevTools からの利用について&lt;/h4&gt;
+&lt;p&gt;Chrome DevTools を開き Audits タブをクリック
+対象を選択後「Run audits」をクリック。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[C#テスト環境]]></title><description><![CDATA[C#テスト環境 Xunit ユニットテスト用フレームワーク FluentAssertions ユニットテスト用拡張メソッド Moq mocking インタフェースの処理が呼ばれた時の引数と戻り値を指定できる。 指定した引数がインタフェース Coverlet.collector…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-14</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-14</guid><pubDate>Sat, 14 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C#テスト環境&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Xunit&lt;/p&gt;
