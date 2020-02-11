@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 09 Feb 2020 13:03:34 GMT</lastBuildDate><item><title><![CDATA[検索について]]></title><description><![CDATA[検索について 欲しい情報を探す方法を知って置くと勉強するときや、
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 Feb 2020 12:51:51 GMT</lastBuildDate><item><title><![CDATA[VBA 高速化について]]></title><description><![CDATA[VBA 高速化 描画停止、自動計算停止、イベント停止を行う 対象となる処理開始前に停止する。 処理終了後に戻す。 セル配列化 Range を配列に変えて配列で処理後に反映する。 書式は可能な限りまとめて設定する Range で範囲を選択して設定する。]]></description><link>https://shrike-a25.netlify.com/posts//2020-02-10</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-02-10</guid><pubDate>Mon, 10 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;VBA 高速化&lt;/h1&gt;
+&lt;h2&gt;描画停止、自動計算停止、イベント停止を行う&lt;/h2&gt;
+&lt;p&gt;対象となる処理開始前に停止する。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;        Application.ScreenUpdating = False
+        Application.Calculation = xlCalculationManual
+        Application.EnableEvents = False&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;処理終了後に戻す。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;        Application.ScreenUpdating = True
+        Application.Calculation = xlCalculationAutomatic
+        Application.EnableEvents = True&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;セル配列化&lt;/h2&gt;
+&lt;p&gt;Range を配列に変えて配列で処理後に反映する。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;    Dim cellArray As Variant
+    cellArray = Range(&amp;quot;A1:B2&amp;quot;)
+
+    &amp;#39;値をセットする
+    cellArray(1,1) = &amp;quot;test&amp;quot;
+
+    Range(&amp;quot;A1:B2&amp;quot;) = cellArray&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;書式は可能な限りまとめて設定する&lt;/h2&gt;
+&lt;p&gt;Range で範囲を選択して設定する。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[検索について]]></title><description><![CDATA[検索について 欲しい情報を探す方法を知って置くと勉強するときや、
 わからないことを調べるときに役立つ。 普段使っている方法を紹介します。 マイナス検索 「キーワード-除外したいキーワード」で不必要なキーワードを除外できる。 期間指定を行う。 google とか bing…]]></description><link>https://shrike-a25.netlify.com/posts//2020-02-09</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-02-09</guid><pubDate>Sun, 09 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;検索について&lt;/h1&gt;
 &lt;p&gt;欲しい情報を探す方法を知って置くと勉強するときや、
 わからないことを調べるときに役立つ。&lt;/p&gt;
