@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 Feb 2020 12:51:51 GMT</lastBuildDate><item><title><![CDATA[VBA 高速化について]]></title><description><![CDATA[VBA 高速化 描画停止、自動計算停止、イベント停止を行う 対象となる処理開始前に停止する。 処理終了後に戻す。 セル配列化 Range を配列に変えて配列で処理後に反映する。 書式は可能な限りまとめて設定する Range で範囲を選択して設定する。]]></description><link>https://shrike-a25.netlify.com/posts//2020-02-10</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-02-10</guid><pubDate>Mon, 10 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;VBA 高速化&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 30 Mar 2020 13:36:39 GMT</lastBuildDate><item><title><![CDATA[Dockerについて]]></title><description><![CDATA[Docker について Docker とは コンテナ型仮想化ソフトウェアのこと
+アプリとミドルウェアのみの仮想化を行う。
+ゲスト OS を使用しないため軽い
+仮想環境なので環境を汚さない、また別のホストへの複製がしやすい。
+Red Hat 社は Podman で Docker…]]></description><link>https://shrike-a25.netlify.com/posts//2020-03-30</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-03-30</guid><pubDate>Mon, 30 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Docker について&lt;/h1&gt;
+&lt;h2&gt;Docker とは&lt;/h2&gt;
+&lt;p&gt;コンテナ型仮想化ソフトウェアのこと
+アプリとミドルウェアのみの仮想化を行う。
+ゲスト OS を使用しないため軽い
+仮想環境なので環境を汚さない、また別のホストへの複製がしやすい。
+Red Hat 社は Podman で Docker を置き換えようとしている為、最新の CentOS 等は Docker ではなく
+Podman を使った方がいいかもしれない。&lt;/p&gt;
+&lt;h2&gt;基本的な使い方&lt;/h2&gt;
+&lt;p&gt;Windows なら Docker Desktop を入れて使用メモリ、cpu 等の設定を行う。&lt;/p&gt;
+&lt;p&gt;以下のコマンドで実行したいイメージを実行できるが Docker Compose を使った方が楽。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行されているコンテナの一覧を見る。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker ps&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;停止しているものも含めコンテナの一覧を見る。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker ps -a&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;指定したコンテナの起動。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker start  [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;指定したコンテナの停止。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker stop [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;指定したコンテナの削除。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker rm [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行中のコンテナでコマンドを実行。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker exec -it [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ビルド&lt;br&gt;
+Windows で BuildKit を使う場合は以下のように DOCKER_BUILDKIT に 1 をセットする。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$env:DOCKER_BUILDKIT=1
+$ docker build -t myimage .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Docker Compose&lt;/h2&gt;
+&lt;p&gt;yaml で起動するイメージ、オプション等を書き以下のコマンドで登録できる。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker-compose up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;visual Studio から使う&lt;/h2&gt;
+&lt;p&gt;プロジェクト右クリック 追加 → コンテナオーケストレータのサポート →Docker Compose で Docker Compose 用 yaml と Dockerfile が作成される。&lt;/p&gt;
+&lt;p&gt;※vs2019&lt;/p&gt;</content:encoded></item><item><title><![CDATA[VBA 高速化について]]></title><description><![CDATA[VBA 高速化 描画停止、自動計算停止、イベント停止を行う 対象となる処理開始前に停止する。 処理終了後に戻す。 セル配列化 Range を配列に変えて配列で処理後に反映する。 書式は可能な限りまとめて設定する Range で範囲を選択して設定する。]]></description><link>https://shrike-a25.netlify.com/posts//2020-02-10</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-02-10</guid><pubDate>Mon, 10 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;VBA 高速化&lt;/h1&gt;
 &lt;h2&gt;描画停止、自動計算停止、イベント停止を行う&lt;/h2&gt;
 &lt;p&gt;対象となる処理開始前に停止する。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;        Application.ScreenUpdating = False
