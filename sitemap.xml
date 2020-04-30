@@ -5,6 +5,7 @@
 <url> <loc>https://shrike-a25.netlify.com/tags/Docker</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/tags/VBA</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/tags/WEB</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://shrike-a25.netlify.com/tags/npm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/tags/vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/tags/その他</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/tags/パフォーマンス</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -24,6 +25,8 @@
 <url> <loc>https://shrike-a25.netlify.com/posts/2020-02-10/amp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/posts/2020-03-30</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/posts/2020-03-30/amp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://shrike-a25.netlify.com/posts/2020-04-30</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://shrike-a25.netlify.com/posts/2020-04-30/amp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://shrike-a25.netlify.com/tags/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
