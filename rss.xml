@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Jun 2020 13:17:46 GMT</lastBuildDate><item><title><![CDATA[Vue.jsについて]]></title><description><![CDATA[Vue.jsについて Vue.js とは Angular, Reactと並ぶ近年人気の
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 09 Jun 2020 14:34:23 GMT</lastBuildDate><item><title><![CDATA[Gitについて]]></title><description><![CDATA[Gitについて Gitとは 分散型バージョン管理システム ちなみにsvnは集中型バージョン管理システム
+svnより後発なので機能が多い分学習コストは高い。 また、202…]]></description><link>https://shrike-a25.netlify.com/posts//2020-06-09</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-06-09</guid><pubDate>Tue, 09 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Gitについて&lt;/h1&gt;
+&lt;h2&gt;Gitとは&lt;/h2&gt;
+&lt;p&gt;分散型バージョン管理システム&lt;br&gt;
+ちなみにsvnは集中型バージョン管理システム
+svnより後発なので機能が多い分学習コストは高い。&lt;br&gt;
+また、2020年現在様々な所で使われるためエディタの拡張等が多い。
+分散型なのでローカルでコミットできる。&lt;/p&gt;
+&lt;h2&gt;用語&lt;/h2&gt;
+&lt;h3&gt;リポジトリ(repository)&lt;/h3&gt;
+&lt;p&gt;「貯蔵庫」の意味。&lt;br&gt;
+ソースコード等の管理の対象となるファイル・フォルダを保存する場所。&lt;/p&gt;
+&lt;h3&gt;リモートリポジトリ(remoteRepository)&lt;/h3&gt;
+&lt;p&gt;ネットワーク上に存在する複数人で使用するためのリポジトリのこと。&lt;/p&gt;
+&lt;h3&gt;ローカルリポジトリ(localRepository)&lt;/h3&gt;
+&lt;p&gt;自分のマシン上のリポジトリのこと。&lt;/p&gt;
+&lt;h3&gt;クローン(clone)&lt;/h3&gt;
+&lt;p&gt;リモートリポジトリをローカルリポジトリとしてローカルに複製すること。&lt;/p&gt;
+&lt;h3&gt;フォーク(fork)&lt;/h3&gt;
+&lt;p&gt;リモート上でのリポジトリのコピー&lt;br&gt;
+リモート上派生したリポジトリを作成できる機能のこと。&lt;/p&gt;
+&lt;h3&gt;イニット(init)&lt;/h3&gt;
+&lt;p&gt;空の状態でリポジトリを新規作成するコマンドのこと。&lt;/p&gt;
+&lt;h3&gt;ワーキングツリー/ワークツリー&lt;/h3&gt;
+&lt;p&gt;実際に作業をしているディレクトリのこと。&lt;/p&gt;
+&lt;h3&gt;インデックス&lt;/h3&gt;
+&lt;p&gt;コミットする前に更新内容の一時的な保存をする場所のこと。&lt;/p&gt;
+&lt;h3&gt;add&lt;/h3&gt;
+&lt;p&gt;ワーキングツリーの変更内容をインデックスに登録する作業のこと。&lt;/p&gt;
+&lt;h3&gt;コミット(commit)&lt;/h3&gt;
+&lt;p&gt;追加・変更した内容をリポジトリに反映すること。&lt;/p&gt;
+&lt;h3&gt;プル(pull)&lt;/h3&gt;
+&lt;p&gt;fetchとmergeを同時に行うこと。&lt;/p&gt;
+&lt;h3&gt;ヘッド&lt;/h3&gt;
+&lt;p&gt;作業対象となっているブランチ。&lt;/p&gt;
+&lt;h3&gt;チェックアウト&lt;/h3&gt;
+&lt;p&gt;ヘッドを切り替えること。&lt;/p&gt;
+&lt;h3&gt;コンフリクト&lt;/h3&gt;
+&lt;p&gt;マージ対象のファイル内で同じ箇所が修正されているために自動でマージ出来ない状態のこと。&lt;/p&gt;
+&lt;h3&gt;スタッシュ(stash)&lt;/h3&gt;
+&lt;p&gt;一時退避したものが格納されている領域のこと。
+別の作業をするため一時的にコミットしたくないもの等を登録しておく。&lt;/p&gt;
+&lt;h3&gt;.gitignore&lt;/h3&gt;
+&lt;p&gt;履歴管理の対象外とするファイルを登録するためのファイル。&lt;/p&gt;
+&lt;h2&gt;Svnからの移行&lt;/h2&gt;
+&lt;p&gt;git-svnを使う。&lt;/p&gt;
+&lt;h2&gt;A successful Git branching model&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://keijinsonyaban.blogspot.jp/2010/10/a-successful-git-branching-model.html&quot;&gt;【日本語訳】A successful Git branching model&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;メインブランチ&lt;/h3&gt;
+&lt;h4&gt;master&lt;/h4&gt;
+&lt;p&gt;本番にリリースできる状態。&lt;br&gt;
+直接コミットは行わない。&lt;br&gt;
+release,hotfixからマージする。&lt;/p&gt;
+&lt;h4&gt;develop&lt;/h4&gt;
+&lt;p&gt;開発中の最新状態。&lt;br&gt;
+直接コミットは行わない。&lt;br&gt;
+feature,hotfixからマージする。&lt;/p&gt;
+&lt;h3&gt;サポートブランチ&lt;/h3&gt;
+&lt;h4&gt;feature&lt;/h4&gt;
+&lt;p&gt;新機能の開発を行う。&lt;br&gt;
+developから分岐しdevelopにマージする。&lt;/p&gt;
+&lt;h4&gt;release&lt;/h4&gt;
+&lt;p&gt;リリースの準備作業を行う。&lt;br&gt;
+developから分岐し、developとmasterにマージする。&lt;/p&gt;
+&lt;h4&gt;hotfix&lt;/h4&gt;
+&lt;p&gt;緊急のバグフィックスを行う。&lt;br&gt;
+masterから分岐し、developとmasterにマージする。&lt;/p&gt;
+&lt;h2&gt;GuiClient&lt;/h2&gt;
+&lt;p&gt;SourceTree&lt;br&gt;
+Fork&lt;br&gt;
+TortoiseGit  &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Vue.jsについて]]></title><description><![CDATA[Vue.jsについて Vue.js とは Angular, Reactと並ぶ近年人気の
 webフロントエンド用フレームワークのことです。 MVVMで開発でき、コンポーネントという単位でアプリケーションを分割できます。 仮想DOM…]]></description><link>https://shrike-a25.netlify.com/posts//2020-06-07</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-06-07</guid><pubDate>Sun, 07 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Vue.jsについて&lt;/h1&gt;
 &lt;h2&gt;Vue.js とは&lt;/h2&gt;
 &lt;p&gt;Angular, Reactと並ぶ近年人気の
