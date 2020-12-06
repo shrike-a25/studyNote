@@ -1,0 +1,1 @@
+window.__NUXT__={staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1607254731",layout:"default",error:null,state:{},serverRendered:true,routePath:"\u002Famp\u002Ftags\u002F%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9",config:{content:{dbHash:"78b56590"}}};

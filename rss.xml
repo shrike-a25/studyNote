@@ -1,661 +1,107 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[shrike's Note RSS Feed]]></title><description><![CDATA[shrike's Note]]></description><link>https://shrike-a25.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 14 Aug 2020 12:31:19 GMT</lastBuildDate><item><title><![CDATA[Scss,Sassについて]]></title><description><![CDATA[Scss,Sassについて Scss及びSassとはCSSプリプロセッサの1つ。
-Nestの書き方に違いがあるがここではScssについて記述します。 公式ドキュメント 変数宣言 $で変数を宣言できる。 例   Nest コメント 以下のコメントの場合はcss…]]></description><link>https://shrike-a25.netlify.com/posts//2020-08-14</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-08-14</guid><pubDate>Fri, 14 Aug 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Scss,Sassについて&lt;/h1&gt;
-&lt;p&gt;Scss及びSassとはCSSプリプロセッサの1つ。
-Nestの書き方に違いがあるがここではScssについて記述します。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://sass-lang.com/documentation&quot;&gt;公式ドキュメント&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;変数宣言&lt;/h2&gt;
-&lt;p&gt;$で変数を宣言できる。&lt;/p&gt;
-&lt;p&gt;例  &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$black&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token selector&quot;&gt;body &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$black&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Nest&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;body &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token selector&quot;&gt;p &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; blue&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;token selector&quot;&gt;&lt;span class=&quot;token parent important&quot;&gt;&amp;amp;&lt;/span&gt;:hover &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; red&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;コメント&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* コメント */&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// コメント&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;以下のコメントの場合はcssにも残る&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/*! コメント */&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;別のファイルを参照&lt;/h2&gt;
-&lt;p&gt;@importは廃止予定なので@useを使う。  &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;@use &apos;./ファイル名`&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;mixin&lt;/h2&gt;
-&lt;p&gt;引数が使え、複数箇所で同じスタイルを使いまわせる。&lt;/p&gt;
-&lt;p&gt;下の例の場合
-「.button」の中に「baseButton」の内容が加わる。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;@mixin&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;baseButton&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$borderSize&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;1px&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$borderType&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;solid&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$borderColor&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;#ccc&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$borderSize&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$borderType&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$borderColor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token selector&quot;&gt;.button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;@include&lt;/span&gt;  &lt;span class=&quot;token function&quot;&gt;baseButton&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token property&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$borderColor&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;#f90&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;extend&lt;/h2&gt;
-&lt;p&gt;引数は使えないが複数箇所で同じスタイルを使いまわせる。&lt;/p&gt;
-&lt;p&gt;下の例の場合
-「.button, .extend-button」というセレクタで&lt;br&gt;
-「.button」の内容が「.extend-button」に反映される。&lt;br&gt;
-「button」が残るので注意&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.button &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token selector&quot;&gt;.extend-button &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;@extend&lt;/span&gt; .button&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;関数&lt;/h2&gt;
-&lt;h3&gt;自作関数&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;@function&lt;/span&gt; 自作関数名&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;$引数&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;@return&lt;/span&gt; 戻り値&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token selector&quot;&gt;.button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 自作関数名&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;引数&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;数値に関する関数&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token function&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1.5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1.5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1.5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1.5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;percentage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;.5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;3&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;色に関する関数&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token function&quot;&gt;rgb&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;100&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 100&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 100&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;100&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 100&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 100&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; .5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;darken&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 10%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//色を暗くする&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;lighten&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 10%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//色を明るくする&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;mix&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$color2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//2種類の色の間の色を返す&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;saturate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//彩度を上げる&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;desaturate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 50%&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//彩度を下げる&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;adjust-hue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 180deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//色相の変更&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;invert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//色の反転&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;grayscale&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//グレースケール化&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;complement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//補色&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;その他&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;scss&quot;&gt;&lt;pre class=&quot;language-scss&quot;&gt;&lt;code class=&quot;language-scss&quot;&gt;&lt;span class=&quot;token function&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$lists&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//N番目の値を取得&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Gitについて]]></title><description><![CDATA[Gitについて Gitとは 分散型バージョン管理システム ちなみにsvnは集中型バージョン管理システム
-svnより後発なので機能が多い分学習コストは高い。 また、202…]]></description><link>https://shrike-a25.netlify.com/posts//2020-06-09</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-06-09</guid><pubDate>Tue, 09 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Gitについて&lt;/h1&gt;
-&lt;h2&gt;Gitとは&lt;/h2&gt;
-&lt;p&gt;分散型バージョン管理システム&lt;br&gt;
-ちなみにsvnは集中型バージョン管理システム
-svnより後発なので機能が多い分学習コストは高い。&lt;br&gt;
-また、2020年現在様々な所で使われるためエディタの拡張等が多い。
-分散型なのでローカルでコミットできる。&lt;/p&gt;
-&lt;h2&gt;用語&lt;/h2&gt;
-&lt;h3&gt;リポジトリ(repository)&lt;/h3&gt;
-&lt;p&gt;「貯蔵庫」の意味。&lt;br&gt;
-ソースコード等の管理の対象となるファイル・フォルダを保存する場所。&lt;/p&gt;
-&lt;h3&gt;リモートリポジトリ(remoteRepository)&lt;/h3&gt;
-&lt;p&gt;ネットワーク上に存在する複数人で使用するためのリポジトリのこと。&lt;/p&gt;
-&lt;h3&gt;ローカルリポジトリ(localRepository)&lt;/h3&gt;
-&lt;p&gt;自分のマシン上のリポジトリのこと。&lt;/p&gt;
-&lt;h3&gt;クローン(clone)&lt;/h3&gt;
-&lt;p&gt;リモートリポジトリをローカルリポジトリとしてローカルに複製すること。&lt;/p&gt;
-&lt;h3&gt;フォーク(fork)&lt;/h3&gt;
-&lt;p&gt;リモート上でのリポジトリのコピー&lt;br&gt;
-リモート上派生したリポジトリを作成できる機能のこと。&lt;/p&gt;
-&lt;h3&gt;イニット(init)&lt;/h3&gt;
-&lt;p&gt;空の状態でリポジトリを新規作成するコマンドのこと。&lt;/p&gt;
-&lt;h3&gt;ワーキングツリー/ワークツリー&lt;/h3&gt;
-&lt;p&gt;実際に作業をしているディレクトリのこと。&lt;/p&gt;
-&lt;h3&gt;インデックス&lt;/h3&gt;
-&lt;p&gt;コミットする前に更新内容の一時的な保存をする場所のこと。&lt;/p&gt;
-&lt;h3&gt;add&lt;/h3&gt;
-&lt;p&gt;ワーキングツリーの変更内容をインデックスに登録する作業のこと。&lt;/p&gt;
-&lt;h3&gt;コミット(commit)&lt;/h3&gt;
-&lt;p&gt;追加・変更した内容をリポジトリに反映すること。&lt;/p&gt;
-&lt;h3&gt;プル(pull)&lt;/h3&gt;
-&lt;p&gt;fetchとmergeを同時に行うこと。&lt;/p&gt;
-&lt;h3&gt;ヘッド&lt;/h3&gt;
-&lt;p&gt;作業対象となっているブランチ。&lt;/p&gt;
-&lt;h3&gt;チェックアウト&lt;/h3&gt;
-&lt;p&gt;ヘッドを切り替えること。&lt;/p&gt;
-&lt;h3&gt;コンフリクト&lt;/h3&gt;
-&lt;p&gt;マージ対象のファイル内で同じ箇所が修正されているために自動でマージ出来ない状態のこと。&lt;/p&gt;
-&lt;h3&gt;スタッシュ(stash)&lt;/h3&gt;
-&lt;p&gt;一時退避したものが格納されている領域のこと。
-別の作業をするため一時的にコミットしたくないもの等を登録しておく。&lt;/p&gt;
-&lt;h3&gt;.gitignore&lt;/h3&gt;
-&lt;p&gt;履歴管理の対象外とするファイルを登録するためのファイル。&lt;/p&gt;
-&lt;h2&gt;Svnからの移行&lt;/h2&gt;
-&lt;p&gt;git-svnを使う。&lt;/p&gt;
-&lt;h2&gt;A successful Git branching model&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://keijinsonyaban.blogspot.jp/2010/10/a-successful-git-branching-model.html&quot;&gt;【日本語訳】A successful Git branching model&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;メインブランチ&lt;/h3&gt;
-&lt;h4&gt;master&lt;/h4&gt;
-&lt;p&gt;本番にリリースできる状態。&lt;br&gt;
-直接コミットは行わない。&lt;br&gt;
-release,hotfixからマージする。&lt;/p&gt;
-&lt;h4&gt;develop&lt;/h4&gt;
-&lt;p&gt;開発中の最新状態。&lt;br&gt;
-直接コミットは行わない。&lt;br&gt;
-feature,hotfixからマージする。&lt;/p&gt;
-&lt;h3&gt;サポートブランチ&lt;/h3&gt;
-&lt;h4&gt;feature&lt;/h4&gt;
-&lt;p&gt;新機能の開発を行う。&lt;br&gt;
-developから分岐しdevelopにマージする。&lt;/p&gt;
-&lt;h4&gt;release&lt;/h4&gt;
-&lt;p&gt;リリースの準備作業を行う。&lt;br&gt;
-developから分岐し、developとmasterにマージする。&lt;/p&gt;
-&lt;h4&gt;hotfix&lt;/h4&gt;
-&lt;p&gt;緊急のバグフィックスを行う。&lt;br&gt;
-masterから分岐し、developとmasterにマージする。&lt;/p&gt;
-&lt;h2&gt;GuiClient&lt;/h2&gt;
-&lt;p&gt;SourceTree&lt;br&gt;
-Fork&lt;br&gt;
-TortoiseGit  &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Vue.jsについて]]></title><description><![CDATA[Vue.jsについて Vue.js とは Angular, Reactと並ぶ近年人気の
-webフロントエンド用フレームワークのことです。 MVVMで開発でき、コンポーネントという単位でアプリケーションを分割できます。 仮想DOM…]]></description><link>https://shrike-a25.netlify.com/posts//2020-06-07</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-06-07</guid><pubDate>Sun, 07 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Vue.jsについて&lt;/h1&gt;
-&lt;h2&gt;Vue.js とは&lt;/h2&gt;
-&lt;p&gt;Angular, Reactと並ぶ近年人気の
-webフロントエンド用フレームワークのことです。&lt;br&gt;
-MVVMで開発でき、コンポーネントという単位でアプリケーションを分割できます。&lt;br&gt;
-仮想DOMを使用している。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://jp.vuejs.org/index.html&quot;&gt;公式&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;最小限の書き方の例&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; message &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; message &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; が Vueデータに置換される &lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  el&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;#app&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* #app 要素に対して Vue を適用する */&lt;/span&gt;
-  data&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    message&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Hello Vue.js!&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;/* message という名前のデータを定義する */&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;以下のサイトから環境構築無しで試すことができます。&lt;br&gt;
-&lt;a href=&quot;https://codesandbox.io/&quot;&gt;codesandbox&lt;/a&gt;&lt;br&gt;
-使い方はcreatesandboxからvueを選ぶとテンプレートが作成されます。&lt;/p&gt;
-&lt;h2&gt;Data Options&lt;/h2&gt;
-&lt;h3&gt;data&lt;/h3&gt;
-&lt;p&gt;データを保持する。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
-&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  data&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    message&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Hello Vue.js!&apos;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;props&lt;/h3&gt;
-&lt;p&gt;コンポーネントにパラメータを引き渡す。&lt;/p&gt;
-&lt;h3&gt;watch&lt;/h3&gt;
-&lt;p&gt;データの変動を監視します。データ変動時にコールバック関数が呼ばれ、引数には変更前の値と、変更後の値が渡されます。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; vm &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  data&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    hoge&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  watch&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token function-variable function&quot;&gt;hoge&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;newVal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; oldVal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token comment&quot;&gt;//処理&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;methods&lt;/h3&gt;
-&lt;p&gt;v-on のイベントハンドラとして呼び出されるメソッドを定義します。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;@click&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;buttonClick(&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;hoge&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;)&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;hoge&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-
-new Vue({
-  methods: {
-    buttonClick: function (message) {
-      alert(message)
-    }
-  }
-})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;LifecycleHooks Options&lt;/h2&gt;
-&lt;p&gt;Vueのインスタンスが生成されたり、更新されたりする際に呼ばれる関数。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;名称&lt;/th&gt;
-&lt;th&gt;説明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;beforeCreated&lt;/td&gt;
-&lt;td&gt;インスタンスが生成され、リアクティブデータが初期化される直前に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;created&lt;/td&gt;
-&lt;td&gt;インスタンスが生成され、リアクティブデータが初期化された直後に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;beforeMount&lt;/td&gt;
-&lt;td&gt;マウントされる直前に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;mounted&lt;/td&gt;
-&lt;td&gt;マウントされた直後に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;beforeUpdate&lt;/td&gt;
-&lt;td&gt;インスタンスのデータが更新される直前に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;updated&lt;/td&gt;
-&lt;td&gt;インスタンスのデータが更新された直後に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;activated&lt;/td&gt;
-&lt;td&gt;コンポーネントが活性化する時に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;deactivated&lt;/td&gt;
-&lt;td&gt;コンポーネントが非活性化する時に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;beforeDestroy&lt;/td&gt;
-&lt;td&gt;インスタンスが破棄される直前に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;destroyed&lt;/td&gt;
-&lt;td&gt;インスタンスが破棄された直後に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;errorCaptured&lt;/td&gt;
-&lt;td&gt;エラーがキャプチャされた時に呼ばれます。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
-&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token function-variable function&quot;&gt;created&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Directives&lt;/h2&gt;
-&lt;p&gt;v-* の形式のHTML属性で記述する。&lt;/p&gt;
-&lt;h3&gt;テキストレンダリング v-text&lt;/h3&gt;
-&lt;p&gt;テキストをレンダリングする。&lt;br&gt;
-中括弧2つで囲むことでも記述できます。(Mustache構文)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-text&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;msg&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- 同じ --&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;{{msg}}&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;HTMLレンダリング v-html&lt;/h3&gt;
-&lt;p&gt;HTMLをレンダリングする。&lt;br&gt;
-v-textの場合はエスケープされるためhtmlタグを使用できないが、v-htmlの場合は使用できる。&lt;/p&gt;
-&lt;h3&gt;条件付きレンダリング v-if v-else v-else-if&lt;/h3&gt;
-&lt;p&gt;条件付きレンダリング。&lt;br&gt;
-指定した条件に当てはまる場合のみ描画される。&lt;br&gt;
-条件に当てはまらない場合はhtmlの要素から消えます。&lt;/p&gt;
-&lt;h3&gt;条件付きレンダリング v-show&lt;/h3&gt;
-&lt;p&gt;条件付きレンダリング。&lt;br&gt;
-trueの場合のみ描画される。&lt;br&gt;
-v-ifと違いhtml上からは消えずにcssのdisplay:noneになります。&lt;/p&gt;
-&lt;h3&gt;リストレンダリング v-for&lt;/h3&gt;
-&lt;p&gt;オブジェクトを配列の個数分表示したりなどのループに使用します。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;ul&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;li&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-for&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;item in items&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;:key&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;item.message&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    {{ item.message }}
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;li&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;ul&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;属性のデータバインディング v-bind&lt;/h3&gt;
-&lt;p&gt;属性のデータバインディングを行う。&lt;br&gt;
-v-bind:属性名で記述します。&lt;br&gt;
-:属性名で省略可能です。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token style-attr language-css&quot;&gt;&lt;span class=&quot;token attr-name&quot;&gt;&lt;span class=&quot;token attr-name&quot;&gt;style&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&quot;&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;フォーム入力バインディング v-model&lt;/h3&gt;
-&lt;p&gt;フォーム入力とモデルの紐付けを行う。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-model&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;edit me&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Message is: {{ message }}&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;イベント v-on&lt;/h3&gt;
-&lt;p&gt;イベント。&lt;br&gt;
-v-on:イベント名で記述する。&lt;br&gt;
-@イベント名で省略可能です。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;@click&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;buttonClick&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;hoge&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Mustacheバインディングを隠す v-cloak&lt;/h3&gt;
-&lt;p&gt;Vueインスタンスが用意されるまでの間表示しない。&lt;br&gt;
-{{ message }}のように表示されるのを防ぐことができる。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-cloak&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  {{ message }}
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;一度だけ描画 v-once&lt;/h3&gt;
-&lt;p&gt;一度だけ描画が行われ、Modelが変更されても表示内容は更新されない。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;v-once&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  {{ message }}
-&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;TypeScript対応&lt;/h2&gt;
-&lt;p&gt;&amp;#x3C;script lang=&quot;ts&quot;&gt;にする。&lt;br&gt;
-vue-property-decoratorを使う。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;script lang&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Vue &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;vue-property-decorator&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-@Component
-&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ComponentName&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;script&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[npmについて]]></title><description><![CDATA[npmについて npmとは web開発で使われるパッケージ管理ツールのこと。 package.json package.jsonとは使用しているパッケージとそのバージョンを管理するためのファイル。 package.json…]]></description><link>https://shrike-a25.netlify.com/posts//2020-04-30</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-04-30</guid><pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;npmについて&lt;/h1&gt;
-&lt;h2&gt;npmとは&lt;/h2&gt;
-&lt;p&gt;web開発で使われるパッケージ管理ツールのこと。&lt;/p&gt;
-&lt;h2&gt;package.json&lt;/h2&gt;
-&lt;p&gt;package.jsonとは使用しているパッケージとそのバージョンを管理するためのファイル。&lt;/p&gt;
-&lt;h2&gt;package.jsonを生成する&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;パッケージをインストール&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm i パッケージ名&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;パッケージをアンインストール&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm un パッケージ名&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;パッケージをアップデート&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm update パッケージ名&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;まとめて実行する場合はパッケージ名をつけずに実行する。&lt;/p&gt;
-&lt;p&gt;グローバルを操作する場合&lt;br&gt;
--gをつける。&lt;/p&gt;
-&lt;h2&gt;package.jsonにないパッケージを削除する&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm prune&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;インストールされているパッケージのバージョン確認&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm outdated&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;インストール済みパッケージ確認（依存関係を含む）&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm list&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;インストール済みパッケージ確認&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm ls --depth=0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;npm scripts&lt;/h2&gt;
-&lt;p&gt;npm scriptsとは&lt;br&gt;
-package.jsonにあるscriptの部分の事です。&lt;/p&gt;
-&lt;p&gt;例&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token string&quot;&gt;&quot;処理名&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;処理&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;定義した処理を実行&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npm run 処理名&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;ファイルを監視し更新があったときに実行&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;npm run watch 処理 監視対象&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;並列実行&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;run&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p 処理&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; 処理&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;別のファイルに処理を書く&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token string&quot;&gt;&quot;処理名&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ファイル名&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;js&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;npx&lt;/h2&gt;
-&lt;p&gt;ローカルのモジュールを実行したり、1回だけ実行する場合は以下のように記述する方が簡単です。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;npx パッケージ名  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Dockerについて]]></title><description><![CDATA[Docker について Docker とは コンテナ型仮想化ソフトウェアのこと
-アプリとミドルウェアのみの仮想化を行う。
-ゲスト OS を使用しないため軽い
-仮想環境なので環境を汚さない、また別のホストへの複製がしやすい。
-Red Hat 社は Podman で Docker…]]></description><link>https://shrike-a25.netlify.com/posts//2020-03-30</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-03-30</guid><pubDate>Mon, 30 Mar 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Docker について&lt;/h1&gt;
-&lt;h2&gt;Docker とは&lt;/h2&gt;
-&lt;p&gt;コンテナ型仮想化ソフトウェアのこと
-アプリとミドルウェアのみの仮想化を行う。
-ゲスト OS を使用しないため軽い
-仮想環境なので環境を汚さない、また別のホストへの複製がしやすい。
-Red Hat 社は Podman で Docker を置き換えようとしている為、最新の CentOS 等は Docker ではなく
-Podman を使った方がいいかもしれない。&lt;/p&gt;
-&lt;h2&gt;基本的な使い方&lt;/h2&gt;
-&lt;p&gt;Windows なら Docker Desktop を入れて使用メモリ、cpu 等の設定を行う。&lt;/p&gt;
-&lt;p&gt;以下のコマンドで実行したいイメージを実行できるが Docker Compose を使った方が楽。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実行されているコンテナの一覧を見る。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker ps&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;停止しているものも含めコンテナの一覧を見る。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker ps -a&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;指定したコンテナの起動。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker start  [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;指定したコンテナの停止。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker stop [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;指定したコンテナの削除。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker rm [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実行中のコンテナでコマンドを実行。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker exec -it [Name or ID]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ビルド&lt;br&gt;
-Windows で BuildKit を使う場合は以下のように DOCKER_BUILDKIT に 1 をセットする。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$env:DOCKER_BUILDKIT=1
-$ docker build -t myimage .&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Docker Compose&lt;/h2&gt;
-&lt;p&gt;yaml で起動するイメージ、オプション等を書き以下のコマンドで登録できる。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;$ docker-compose up&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;visual Studio から使う&lt;/h2&gt;
-&lt;p&gt;プロジェクト右クリック 追加 → コンテナオーケストレータのサポート →Docker Compose で Docker Compose 用 yaml と Dockerfile が作成される。&lt;/p&gt;
-&lt;p&gt;※vs2019&lt;/p&gt;</content:encoded></item><item><title><![CDATA[VBA 高速化について]]></title><description><![CDATA[VBA 高速化 描画停止、自動計算停止、イベント停止を行う 対象となる処理開始前に停止する。 処理終了後に戻す。 セル配列化 Range を配列に変えて配列で処理後に反映する。 書式は可能な限りまとめて設定する Range で範囲を選択して設定する。]]></description><link>https://shrike-a25.netlify.com/posts//2020-02-10</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-02-10</guid><pubDate>Mon, 10 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;VBA 高速化&lt;/h1&gt;
-&lt;h2&gt;描画停止、自動計算停止、イベント停止を行う&lt;/h2&gt;
-&lt;p&gt;対象となる処理開始前に停止する。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;        Application.ScreenUpdating = False
-        Application.Calculation = xlCalculationManual
-        Application.EnableEvents = False&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;処理終了後に戻す。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;        Application.ScreenUpdating = True
-        Application.Calculation = xlCalculationAutomatic
-        Application.EnableEvents = True&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;セル配列化&lt;/h2&gt;
-&lt;p&gt;Range を配列に変えて配列で処理後に反映する。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vbs&quot;&gt;&lt;pre class=&quot;language-vbs&quot;&gt;&lt;code class=&quot;language-vbs&quot;&gt;    Dim cellArray As Variant
-    cellArray = Range(&amp;quot;A1:B2&amp;quot;)
-
-    &amp;#39;値をセットする
-    cellArray(1,1) = &amp;quot;test&amp;quot;
-
-    Range(&amp;quot;A1:B2&amp;quot;) = cellArray&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;書式は可能な限りまとめて設定する&lt;/h2&gt;
-&lt;p&gt;Range で範囲を選択して設定する。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[検索について]]></title><description><![CDATA[検索について 欲しい情報を探す方法を知って置くと勉強するときや、
-わからないことを調べるときに役立つ。 普段使っている方法を紹介します。 マイナス検索 「キーワード-除外したいキーワード」で不必要なキーワードを除外できる。 期間指定を行う。 google とか bing…]]></description><link>https://shrike-a25.netlify.com/posts//2020-02-09</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2020-02-09</guid><pubDate>Sun, 09 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;検索について&lt;/h1&gt;
-&lt;p&gt;欲しい情報を探す方法を知って置くと勉強するときや、
-わからないことを調べるときに役立つ。&lt;/p&gt;
-&lt;p&gt;普段使っている方法を紹介します。&lt;/p&gt;
-&lt;h2&gt;マイナス検索&lt;/h2&gt;
-&lt;p&gt;「キーワード-除外したいキーワード」で不必要なキーワードを除外できる。&lt;/p&gt;
-&lt;h2&gt;期間指定を行う。&lt;/h2&gt;
-&lt;p&gt;google とか bing なら検索欄の下辺りから絞れる。&lt;br&gt;
-古い情報がいらないときなどに使う。&lt;/p&gt;
-&lt;h2&gt;完全一致検索&lt;/h2&gt;
-&lt;p&gt;ダブルクォーテーション「&quot;」でキーワードを囲う。&lt;/p&gt;
-&lt;h2&gt;サイト内検索&lt;/h2&gt;
-&lt;p&gt;「site:url キーワード」でサイト内検索。&lt;/p&gt;
-&lt;h2&gt;英語で検索&lt;/h2&gt;
-&lt;p&gt;IT 系は英語で検索するほうがヒットしやすいこともあるので、日本語でだめなら英語で検索する。&lt;br&gt;
-単に英語で検索するだけでなく言語の設定自体を英語にすると検索結果が変わる。
-bing の場合は画面上部からワンボタンで切り替えれるので便利。&lt;/p&gt;
-&lt;h2&gt;あいまい検索&lt;/h2&gt;
-&lt;p&gt;google の場合アスタリスク「*」であいまい検索ができる。&lt;/p&gt;
-&lt;h2&gt;類似サイト検索&lt;/h2&gt;
-&lt;p&gt;google の場合「related:url」で類似サイト検索ができる。&lt;/p&gt;
-&lt;h2&gt;比較をする場合&lt;/h2&gt;
-&lt;p&gt;「〇〇 vs ☓☓」のように検索すると比較したサイトを検索しやすい。&lt;/p&gt;
-&lt;h2&gt;特定のサイトで探す。&lt;/h2&gt;
-&lt;p&gt;IT 関連は Qiita,stackoverflow&lt;br&gt;
-リアルタイムの情報は twitter などサイトを使い分けて検索する。&lt;br&gt;
-また、github 内で「awesome 言語」等で検索すると捗る。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Webパフォーマンスについて]]></title><description><![CDATA[Web パフォーマンスについて SPA(シングルページアプリケーション)で不要な読み込み回数を削減。 ただし、初期コストは増える。 リクエスト数削減。 HTTP/1.1 の場合は、ブラウザによって同時に読み込めるファイル数が決まっているため 通信量削減 遅延読込を行う PWA…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-23</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-23</guid><pubDate>Mon, 23 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Web パフォーマンスについて&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;SPA(シングルページアプリケーション)で不要な読み込み回数を削減。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ただし、初期コストは増える。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;リクエスト数削減。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;HTTP/1.1 の場合は、ブラウザによって同時に読み込めるファイル数が決まっているため&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;通信量削減&lt;/li&gt;
-&lt;li&gt;遅延読込を行う&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PWA&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;キャッシュを利用しやすくなる。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;パフォーマンス測定&lt;/h2&gt;
-&lt;h3&gt;Lighthouse&lt;/h3&gt;
-&lt;p&gt;Google のサイトパフォーマンス測定ツール&lt;br&gt;
-Chrome DevTools,Chrome 拡張,Node.js ライブラリから利用できる。&lt;/p&gt;
-&lt;h4&gt;Chrome DevTools からの利用について&lt;/h4&gt;
-&lt;p&gt;Chrome DevTools を開き Audits タブをクリック&lt;br&gt;
-対象を選択後「Run audits」をクリック。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[C#テスト環境]]></title><description><![CDATA[C#テスト環境 Xunit ユニットテスト用フレームワーク FluentAssertions ユニットテスト用拡張メソッド Moq mocking インタフェースの処理が呼ばれた時の引数と戻り値を指定できる。 指定した引数がインタフェース Coverlet.collector…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-14</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-14</guid><pubDate>Sat, 14 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C#テスト環境&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Xunit&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ユニットテスト用フレームワーク&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;FluentAssertions&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ユニットテスト用拡張メソッド&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Moq&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;mocking&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;インタフェースの処理が呼ばれた時の引数と戻り値を指定できる。&lt;/p&gt;
-&lt;p&gt;指定した引数がインタフェース&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Coverlet.collector&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;カバレッジ計算・出力&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Xunit 使い方&lt;/h2&gt;
-&lt;p&gt;Fact 属性でテスト対象にする。&lt;/p&gt;
-&lt;p&gt;Fact 属性に引数 DisplayName を渡すとテストエクスプローラに表示される名称が変わる。&lt;/p&gt;
-&lt;p&gt;渡さない場合はメソッド名となる。&lt;/p&gt;
-&lt;p&gt;例[Fact(DisplayName = &quot;aaaa&quot;)]&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://xunit.net&quot;&gt;Xunit 公式&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Xunit で Console 出力を表示&lt;/h3&gt;
-&lt;p&gt;Console.SetOut を使い ITestOutputHelper の WriteLine を実行する。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cs&quot;&gt;&lt;pre class=&quot;language-cs&quot;&gt;&lt;code class=&quot;language-cs&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt;&lt;/span&gt; converter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token constructor-invocation class-name&quot;&gt;Converter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;output&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-Console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SetOut&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;converter&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cs&quot;&gt;&lt;pre class=&quot;language-cs&quot;&gt;&lt;code class=&quot;language-cs&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Converter&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token type-list&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;TextWriter&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;readonly&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ITestOutputHelper&lt;/span&gt; _output&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Converter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;ITestOutputHelper&lt;/span&gt; output&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        _output &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; output&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;Encoding&lt;/span&gt; Encoding
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Encoding&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UTF8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; message&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        _output&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; format&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        _output&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;format&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Moq の使い方&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cs&quot;&gt;&lt;pre class=&quot;language-cs&quot;&gt;&lt;code class=&quot;language-cs&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt;&lt;/span&gt; mock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token constructor-invocation class-name&quot;&gt;Mock&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;インターフェイス&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-mock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;対象メソッド&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Returns&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;返却値&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/moq/moq4/wiki/Quickstart&quot;&gt;Moq Quickstart&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[vscode お勧め拡張]]></title><description><![CDATA[vscode お勧め拡張 Live Server 簡易な開発用 web サーバ。 Debugger for Chrome Chrome での debug 用。 Prettier - Code formatter コード整形。 ESLint コード整形。 Bracket Pair…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-13</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-13</guid><pubDate>Fri, 13 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;vscode お勧め拡張&lt;/h1&gt;
-&lt;h2&gt;Live Server&lt;/h2&gt;
-&lt;p&gt;簡易な開発用 web サーバ。&lt;/p&gt;
-&lt;h2&gt;Debugger for Chrome&lt;/h2&gt;
-&lt;p&gt;Chrome での debug 用。&lt;/p&gt;
-&lt;h2&gt;Prettier - Code formatter&lt;/h2&gt;
-&lt;p&gt;コード整形。&lt;/p&gt;
-&lt;h2&gt;ESLint&lt;/h2&gt;
-&lt;p&gt;コード整形。&lt;/p&gt;
-&lt;h2&gt;Bracket Pair Colorizer 2&lt;/h2&gt;
-&lt;p&gt;対応する括弧が色で分かるようになる。&lt;/p&gt;
-&lt;h2&gt;Visual Studio IntelliCode&lt;/h2&gt;
-&lt;p&gt;コーディング支援。&lt;/p&gt;
-&lt;h2&gt;Document This&lt;/h2&gt;
-&lt;p&gt;対象ファンクション等にキャレットを置いて ctrl+ald+d で JavaScript と typescript のコメントを追加できる。&lt;/p&gt;
-&lt;h2&gt;Jest Test Explorer&lt;/h2&gt;
-&lt;p&gt;unitTest ツール Jest 用のテストエクスプローラ。&lt;/p&gt;
-&lt;h2&gt;bookmarks&lt;/h2&gt;
-&lt;p&gt;ブックマーク機能を追加する。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[C#のパフォーマンス最適化技法]]></title><description><![CDATA[C#のパフォーマンス最適化技法 速度測定 BenchmarkDotNet ライブラリを使う Stopwatch より正確なベンチマークパッケージ。 使い方は公式ページ参照。 benchmarkdotnet 公式 Stopwatch クラスを使う BenchmarkDotNet…]]></description><link>https://shrike-a25.netlify.com/posts//2019-12-06</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-12-06</guid><pubDate>Fri, 06 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;C#のパフォーマンス最適化技法&lt;/h1&gt;
-&lt;h2&gt;速度測定&lt;/h2&gt;
-&lt;h3&gt;BenchmarkDotNet ライブラリを使う&lt;/h3&gt;
-&lt;p&gt;Stopwatch より正確なベンチマークパッケージ。&lt;br&gt;
-使い方は公式ページ参照。&lt;br&gt;
-&lt;a href=&quot;https://benchmarkdotnet.org/&quot;&gt;benchmarkdotnet 公式&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Stopwatch クラスを使う&lt;/h3&gt;
-&lt;p&gt;BenchmarkDotNet 程正確ではないが、簡単に使える。&lt;br&gt;
-&lt;a href=&quot;https://docs.microsoft.com/ja-jp/dotnet/api/system.diagnostics.stopwatch&quot;&gt;Microsoft Docs Stopwatch クラス&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;以下のような Utilty があれば楽。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cs&quot;&gt;&lt;pre class=&quot;language-cs&quot;&gt;&lt;code class=&quot;language-cs&quot;&gt;    &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;/// 処理時間計測Utilty&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;StopwatchUtilty&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Dictionary&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Stopwatch&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; _dic &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token constructor-invocation class-name&quot;&gt;Dictionary&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Stopwatch&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// 計測開始&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token constructor-invocation class-name&quot;&gt;Stopwatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// 再計測開始&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// 計測停止&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Stop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            _dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Stop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// 計測結果&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;/summary&gt;&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;/// &amp;lt;param name=&quot;processName&quot;&gt;&amp;lt;/param&gt;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token return-type class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Result&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt; processName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;token comment&quot;&gt;// 結果表示&lt;/span&gt;
-            Console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token interpolation-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;$&quot; &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token expression language-csharp&quot;&gt;processName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token expression language-csharp&quot;&gt;_dic&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;processName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Elapsed&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ToString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;最適化&lt;/h2&gt;
-&lt;p&gt;Boxing させない。&lt;br&gt;
-インライン化する。&lt;br&gt;
-無駄な処理をさせない。&lt;br&gt;
-メモリ割り当て、GC を減らす。&lt;/p&gt;
-&lt;h3&gt;Boxing&lt;/h3&gt;
-&lt;p&gt;簡単に説明すると、&lt;br&gt;
-まず、メモリを確保する際にヒープとスタックがあり。&lt;br&gt;
-そしてスタックと比べるとヒープの方が重たい。&lt;br&gt;
-object 型で値のやり取りをする場合に box 化,unbox 化が発生する。&lt;br&gt;
-box 化するとヒープへ割り当てられる。(Heap Allocation)&lt;br&gt;
-なので、box,unbox はパフォーマンス的によろしくない。&lt;/p&gt;
-&lt;h4&gt;box 化させないためには&lt;/h4&gt;
-&lt;p&gt;object 型を使用しない。&lt;br&gt;
-メソッド呼び出し時にジェネリックがあればそちらを使う。&lt;br&gt;
-&lt;a href=&quot;https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/types/boxing-and-unboxing&quot;&gt;Microsoft Docs ボックス化とボックス化解除&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Clr Heap Allocation Analyzer 拡張を使うと警告が表示される。&lt;/p&gt;
-&lt;h4&gt;IL を確認する&lt;/h4&gt;
-&lt;p&gt;ILSpy&lt;br&gt;
-DnSpy&lt;br&gt;
-ildasm&lt;/p&gt;
-&lt;h3&gt;メモリ最適化&lt;/h3&gt;
-&lt;p&gt;VisualStudio のデバッグ-ウィンドウ-診断ツールの表示から診断ツール表示。&lt;br&gt;
-適宜スナップショットをとって直前のスナップショットと比較する。&lt;br&gt;
-参照の削除。(参照されていると GC で解放されないため)&lt;br&gt;
-イベントの削除。(参照が残るので)&lt;br&gt;
-Dispose の徹底。(using を使う)&lt;br&gt;
-Lambda での変数のキャプチャに気をつける。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[はじめに]]></title><description><![CDATA[はじめに このサイトは IT 技術について個人的に学んだことを記述するための
-備忘録的な目的で使用します。]]></description><link>https://shrike-a25.netlify.com/posts//2019-11-24</link><guid isPermaLink="false">https://shrike-a25.netlify.com/posts//2019-11-24</guid><pubDate>Sun, 24 Nov 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;はじめに&lt;/h1&gt;
-&lt;p&gt;このサイトは IT 技術について個人的に学んだことを記述するための
-備忘録的な目的で使用します。&lt;/p&gt;</content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>shrike's Note</title>
+        <link>https://shrike-a25.netlify.app/</link>
+        <description></description>
+        <lastBuildDate>Sun, 06 Dec 2020 11:38:53 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/nuxt-community/feed-module</generator>
+        <item>
+            <title><![CDATA[はじめに]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2019-11-24/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2019-11-24/</guid>
+            <pubDate>Sun, 24 Nov 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[はじめに]]></description>
+            <content:encoded><![CDATA[はじめに]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[C#テスト環境]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2019-12-14/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2019-12-14/</guid>
+            <pubDate>Sat, 14 Dec 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[C#テスト環境]]></description>
+            <content:encoded><![CDATA[C#テスト環境]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[vscode お勧め拡張]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2019-12-13/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2019-12-13/</guid>
+            <pubDate>Fri, 13 Dec 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[vscode お勧め拡張]]></description>
+            <content:encoded><![CDATA[vscode お勧め拡張]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[検索について]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-02-09/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-02-09/</guid>
+            <pubDate>Sun, 09 Feb 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[検索について]]></description>
+            <content:encoded><![CDATA[検索について]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[VBA 高速化について]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-02-10/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-02-10/</guid>
+            <pubDate>Mon, 10 Feb 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[VBA 高速化について]]></description>
+            <content:encoded><![CDATA[VBA 高速化について]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Dockerについて]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-03-30/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-03-30/</guid>
+            <pubDate>Mon, 30 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Dockerについて]]></description>
+            <content:encoded><![CDATA[Dockerについて]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Webパフォーマンスについて]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2019-12-23/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2019-12-23/</guid>
+            <pubDate>Mon, 23 Dec 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Webパフォーマンスについて]]></description>
+            <content:encoded><![CDATA[Webパフォーマンスについて]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[npmについて]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-04-30/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-04-30/</guid>
+            <pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[npmについて]]></description>
+            <content:encoded><![CDATA[npmについて]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[C#のパフォーマンス最適化技法]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2019-12-06/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2019-12-06/</guid>
+            <pubDate>Fri, 06 Dec 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[C#のパフォーマンス最適化技法]]></description>
+            <content:encoded><![CDATA[C#のパフォーマンス最適化技法]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Gitについて]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-06-09/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-06-09/</guid>
+            <pubDate>Tue, 09 Jun 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Gitについて]]></description>
+            <content:encoded><![CDATA[Gitについて]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Vue.jsについて]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-06-07/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-06-07/</guid>
+            <pubDate>Sun, 07 Jun 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Vue.jsについて]]></description>
+            <content:encoded><![CDATA[Vue.jsについて]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Scss,Sassについて]]></title>
+            <link>https://shrike-a25.netlify.app//posts/2020-08-14/</link>
+            <guid>https://shrike-a25.netlify.app//posts/2020-08-14/</guid>
+            <pubDate>Fri, 14 Aug 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Scss,Sassについて]]></description>
+            <content:encoded><![CDATA[Scss,Sassについて]]></content:encoded>
+        </item>
+    </channel>
+</rss>
