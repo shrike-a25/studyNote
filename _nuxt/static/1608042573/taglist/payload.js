@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/Taglist", (function(a){a[0]="Csharp";a[1]="パフォーマンス";a[2]="その他";a[3]="WEB";a[4]="vscode";a[5]="VBA";a[6]="Docker";a[7]="Vue";a[8]="Javascript";a[9]="npm";a[10]="Git";a[11]="Scss";return {data:[{tagList:a,tagListAll:a}],fetch:[],mutations:[]}}(Array(12))));
